@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#key").keydown(function(e){
+                $(this).val(e.keyCode);
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>入力フォームにカーソルを入れ、キーコードを調べたいキーを押してください。</p>
+        キーコード ： <input type="text" id="key" />
+    </div>
+</body>
+</html>
