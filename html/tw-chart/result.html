@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tw-entrepreneur-scouter</title>
+    <meta charset="utf-8">
+
+    <!-- Styles -->
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/radar.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/patterns.js"></script>
+
+    <!-- Chart code -->
+    <script>
+        var chart = AmCharts.makeChart( "chartdiv", {
+            "type": "radar",
+            "theme": "patterns",
+            "dataProvider": [ {
+                "country": "JP",
+                "litres": 69
+            }, {
+                "country": "Ireland",
+                "litres": 31
+            }, {
+                "country": "Germany",
+                "litres": 58
+            }, {
+                "country": "Australia",
+                "litres": 10
+            }, {
+                "country": "Austria",
+                "litres": 83
+            }, {
+                "country": "UK",
+                "litres": 21
+            } , {
+                "country": "China",
+                "litres": 55
+            } , {
+                "country": "USA",
+                "litres": 88
+            } ],
+            "valueAxes": [ {
+                "axisTitleOffset": 20,
+                "minimum": 0,
+                "axisAlpha": 0.15
+            } ],
+            "startDuration": 2,
+            "graphs": [ {
+                "balloonText": "[[value]] litres of beer per year",
+                "bullet": "round",
+                "lineThickness": 2,
+                "valueField": "litres"
+            } ],
+            "categoryField": "country",
+            "export": {
+                "enabled": true
+            }
+        } );
+    </script>
+
+</head>
+<body>
+    <div id="chartdiv"></div>
+</body>
+</html>

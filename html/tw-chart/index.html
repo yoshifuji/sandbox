@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tw-entrepreneur-scouter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $( function() {
+            $('#ajax-button').click(
+                function() {
+                    var hostUrl= 'http://localhost:8000';
+                    var param1 = 1;
+                    var param2 = 10;
+                    $.ajax({
+                        url: hostUrl,
+                        type:'POST',
+                        dataType: 'json',
+                        data : {parameter1 : param1, parameter2 : param2 },
+                        timeout:3000
+                    }).done(function(data) {
+                        alert("ok");
+                    }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                        alert("error");
+                    })
+                });
+        } );
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" id="ajax-button" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
